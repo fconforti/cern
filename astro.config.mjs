@@ -104,8 +104,15 @@ export default defineConfig({
 						{ label: 'Il quiz', slug: 'visita/quiz' },
 					],
 				},
-				{ label: 'Videoteca', slug: 'videoteca' },
-				{ label: 'Glossario', slug: 'glossario' },
+				{
+					label: 'Per approfondire',
+					items: [
+						{ label: 'Videoteca', slug: 'videoteca' },
+						{ label: 'Film e serie', slug: 'approfondire/film' },
+						{ label: 'Libri', slug: 'approfondire/libri' },
+						{ label: 'Glossario', slug: 'glossario' },
+					],
+				},
 			],
 		}),
 	],

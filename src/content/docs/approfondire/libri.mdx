@@ -1,0 +1,39 @@
+---
+title: Libri
+description: Libri sulla fisica delle particelle e sul CERN, in italiano, divisi per età. Dai libri illustrati per i più piccoli ai saggi per i grandi.
+---
+
+import InfoTiles from '../../../components/InfoTiles.astro';
+
+:::tip[In due parole]
+Per i più piccoli c'è un libro illustrato sulla fisica quantistica e la serie di romanzi di George scritta da Stephen Hawking con la figlia. Per i ragazzi più grandi, un fisico del CERN che spiega le particelle partendo dalle domande di sua figlia. Per i genitori, i libri di chi il bosone di Higgs l'ha scoperto davvero. Tutti i titoli esistono in italiano. Alcuni sono vecchi: in quel caso cercateli in biblioteca.
+:::
+
+## Dagli 8 anni
+
+<InfoTiles tiles={[
+	{ icon: 'book', color: 'var(--fam-green)', label: 'Erickson · 2019', title: 'Il mio primo libro di fisica quantistica', lines: ['Sheddad Kaid-Salah Ferrón ed Eduard Altarriba.', 'Libro illustrato di 48 pagine: atomi, particelle e stranezze quantistiche spiegate con i disegni. Ottimo prima della mostra Quantum World.'] },
+	{ icon: 'book', color: 'var(--fam-cyan)', label: 'Mondadori · serie', title: 'La chiave segreta per l’universo', lines: ['Lucy e Stephen Hawking.', 'Romanzo d’avventura: George e la sua amica Annie viaggiano nello spazio grazie a un supercomputer. Tra un capitolo e l’altro, schede di scienza vera scritte da Hawking.', 'È il primo di sei. Il terzo, Missione alle origini dell’universo, parla del Big Bang.'] },
+]} />
+
+## Dai 10 anni
+
+<InfoTiles tiles={[
+	{ icon: 'book', color: 'var(--fam-orange)', label: 'Editoriale Scienza · INFN', title: 'Dall’atomo al cosmo', lines: ['Franco Foresta Martin.', 'Dagli atomi dei filosofi greci al Modello Standard, raccontato con aneddoti e con esperimenti da fare a casa. Senza formule.', 'È uscito nel 2003 con il sostegno dell’INFN: si trova soprattutto in biblioteca.'] },
+]} />
+
+## Dai 13 anni
+
+<InfoTiles tiles={[
+	{ icon: 'book', color: 'var(--fam-pink)', label: 'Laterza · 2014', title: 'Particelle familiari', lines: ['Marco Delmastro.', 'Un fisico del CERN racconta la fisica delle particelle partendo dalle domande di sua figlia. Leggero e ironico, da Einstein ai bosoni.'] },
+	{ icon: 'book', color: 'var(--fam-violet)', label: 'Adelphi · 2014', title: 'Sette brevi lezioni di fisica', lines: ['Carlo Rovelli.', 'Sette capitoli brevissimi: relatività, quanti, particelle, buchi neri. Si legge in una sera e lascia molte domande, nel senso buono.'] },
+]} />
+
+## Per i più grandi e per i genitori
+
+<InfoTiles tiles={[
+	{ icon: 'book', color: 'var(--fam-cyan)', label: 'Rizzoli · 2016', title: 'La nascita imperfetta delle cose', lines: ['Guido Tonelli.', 'La corsa alla scoperta del bosone di Higgs raccontata da uno dei suoi protagonisti, fisico dell’Università di Pisa e del CERN.'] },
+	{ icon: 'book', color: 'var(--fam-pink)', label: 'Feltrinelli · 2019', title: 'Genesi', lines: ['Guido Tonelli.', 'La storia dell’universo dal primo istante alla vita sulla Terra, divisa in sette "giorni" come nella Bibbia.'] },
+	{ icon: 'book', color: 'var(--fam-orange)', label: 'Springer · 2010', title: 'Odissea nello zeptospazio', lines: ['Gian Francesco Giudice.', 'Un fisico teorico del CERN spiega cosa cerca l’LHC e perché. Più impegnativo, ma chiarissimo.'] },
+	{ icon: 'book', color: 'var(--fam-green)', label: 'Hoepli', title: 'Diavolo di una particella', lines: ['Dario Menasce.', 'La scoperta del bosone di Higgs raccontata da un fisico milanese che ha lavorato all’esperimento CMS.'] },
+]} />

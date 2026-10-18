@@ -22,6 +22,8 @@ export const icons = {
 	clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
 	boat: '<path d="M3 16.5l2.2 3.5h13.6l2.2-3.5z"/><path d="M12 3v13.5"/><path d="M12 4l6.5 10.5H12"/>',
 	pot: '<path d="M4 11h16"/><path d="M5 11v2.5a7 7 0 0 0 14 0V11"/><path d="M9.5 7.5c0-1 1-1.5 1-2.5M13.5 7.5c0-1 1-1.5 1-2.5"/><path d="M3 11l-1-1M21 11l1-1"/>',
+	book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M8 7h8M8 10.5h6"/>',
+	film: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
 } as const;
 
 export type IconName = keyof typeof icons;
