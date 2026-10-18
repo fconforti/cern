@@ -164,7 +164,7 @@ Per i miei 50 anni mi sembrava il posto giusto: un compleanno dedicato alla curi
 #grid(columns: (1fr, 1fr, 1fr), column-gutter: 4mm,
   tile(cyan, "Sabato 30", height: 33mm, "Arrivo e lago")[Treno Firenze – Milano – Ginevra. Passeggiata sul lago e in città vecchia, fonduta sul molo ai Bains des Pâquis.],
   tile(pink, "Domenica 31", height: 33mm, "Il CERN")[Giornata allo Science Gateway. Poi sauna e tuffo nel lago, e pizza di compleanno ai Pâquis.],
-  tile(orange, "Lunedì 1", height: 33mm, "Rientro")[Treno con partenza comoda, arrivo a Firenze nel tardo pomeriggio.],
+  tile(orange, "Lunedì 1", height: 33mm, "Ultimo giro e rientro")[Passeggiata e pranzo in centro, treno nel pomeriggio. A casa verso le 22.],
 )
 
 #pagebreak()
@@ -209,11 +209,12 @@ Per i miei 50 anni mi sembrava il posto giusto: un compleanno dedicato alla curi
 
 #glow(dx: -60mm, dy: -30mm, r: 80mm, color: violet, a: 88%)
 
-#title(kicker: "Lunedì 1 febbraio", color: orange)[Rientro con calma]
+#title(kicker: "Lunedì 1 febbraio", color: orange)[Ultimo giro, pranzo e rientro]
 
-#slot("Mattina", color: orange)[Colazione lenta. Chi vuole fa un'ultima passeggiata sul lago o un salto al mercato coperto di Plainpalais.]
-#slot("11:39", color: orange)[*EuroCity Ginevra – Milano*. Arrivo a Milano Centrale verso le 15:40. Stavolta il lago è sulla *destra*.]
-#slot("16:10", color: orange)[*Frecciarossa Milano – Firenze*. A casa per le 18.]
+#slot("Mattina", color: orange)[Colazione lenta, check-out e valigie lasciate in hotel. Ultima passeggiata: la riva sinistra con i *Bastions* e il *Muro dei Riformatori*, oppure il mercato di Plainpalais.]
+#slot("12:30", color: orange)[Pranzo in centro, nelle Rues Basses: il *Café du Centre* in place du Molard, brasserie storica con la terrazza coperta e riscaldata, è a dieci minuti a piedi dalla stazione.]
+#slot("15:39", color: orange)[*EuroCity Ginevra – Milano*. Arrivo a Milano Centrale verso le 19:40. Stavolta il lago è sulla *destra*, e tramonta mentre lo costeggiamo.]
+#slot("20:10", color: orange)[*Frecciarossa Milano – Firenze*. A casa verso le 22.]
 
 #v(5mm)
 #title(kicker: "Cose da sapere", color: green)[Logistica]
