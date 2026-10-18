@@ -28,6 +28,11 @@ export default defineConfig({
 	site,
 	base,
 	markdown: { rehypePlugins: [rehypeBaseLinks] },
+	// Vecchi indirizzi già condivisi: rimandano alle pagine nuove.
+	redirects: {
+		'/approfondire/libri': base + 'bibliografia/',
+		'/approfondire/film': base + 'filmografia/',
+	},
 	integrations: [
 		starlight({
 			title: '50 anni al CERN',
