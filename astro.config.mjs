@@ -34,6 +34,7 @@ export default defineConfig({
 			defaultLocale: 'root',
 			locales: { root: { label: 'Italiano', lang: 'it' } },
 			customCss: ['./src/styles/custom.css'],
+			components: { ThemeProvider: './src/components/ThemeProvider.astro' },
 			lastUpdated: false,
 			credits: false,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
@@ -50,14 +51,6 @@ export default defineConfig({
 				},
 			],
 			sidebar: [
-				{
-					label: 'Il viaggio',
-					items: [
-						{ label: 'Il programma', slug: 'viaggio/programma' },
-						{ label: 'Cosa mettere in valigia', slug: 'viaggio/valigia' },
-						{ label: 'Ginevra in due giorni', slug: 'viaggio/ginevra' },
-					],
-				},
 				{
 					label: 'Le basi: di cosa è fatto tutto',
 					items: [

@@ -3,7 +3,7 @@ interface Props { to: string; label?: string }
 const { to, label = 'alla giornata al CERN' } = Astro.props;
 ---
 <p class="countdown-label">Mancano <strong>{label}</strong>:</p>
-<div class="countdown" data-to={to} aria-live="polite">
+<div class="countdown not-content" data-to={to} aria-live="polite">
 	<div><b data-u="d">–</b><span>giorni</span></div>
 	<div><b data-u="h">–</b><span>ore</span></div>
 	<div><b data-u="m">–</b><span>minuti</span></div>

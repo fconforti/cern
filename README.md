@@ -14,9 +14,11 @@ npm run build     # output in dist/
 
 ## Struttura
 
-- `src/content/docs/` — le pagine (Markdown/MDX), una cartella per sezione: `viaggio`, `basi`, `cern`, `ricerca`, `visita`.
+- `src/content/docs/` — le pagine (Markdown/MDX), una cartella per sezione: `basi`, `cern`, `ricerca`, `visita`.
 - `src/components/YouTube.astro` — player YouTube leggero (anteprima, iframe solo al click, sottotitoli in italiano per i video in inglese).
-- `src/components/Quiz.astro`, `Countdown.astro`, `StandardModel.astro` — componenti interattivi.
+- `src/content/docs/index.mdx` — la home: programma del viaggio, valigia, Ginevra, link al PDF (`public/50-anni-al-CERN.pdf`).
+- `src/components/Quiz.astro`, `Countdown.astro`, `StandardModel.astro`, `Checklists.astro` — componenti interattivi.
+- `src/components/ThemeProvider.astro` — tema scuro di default.
 - `src/styles/custom.css` — tema.
 - `astro.config.mjs` — titolo, sidebar, gestione di `base` per GitHub Pages.
 

@@ -21,14 +21,15 @@ if (lang === 'en') {
 }
 if (start) params.set('start', String(start));
 const src = `https://www.youtube-nocookie.com/embed/${id}?${params.toString()}`;
-const poster = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
-const fallback = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+// hqdefault esiste per ogni video; maxresdefault manca per molti e YouTube
+// risponde con un'immagine grigia (404 ma JPEG valido), quindi niente fallback.
+const poster = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 ---
 
-<figure class="yt" data-src={src} data-title={title}>
+<figure class="yt not-content" data-src={src} data-title={title}>
 	<div class="yt-frame">
 		<button class="yt-poster" type="button" aria-label={`Guarda il video: ${title}`}>
-			<img src={poster} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${fallback}'`} />
+			<img src={poster} alt="" loading="lazy" width="480" height="360" />
 			<span class="yt-play" aria-hidden="true"></span>
 		</button>
 	</div>

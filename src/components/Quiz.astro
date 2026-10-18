@@ -3,7 +3,7 @@ interface Q { q: string; a: string[]; ok: number; why: string }
 interface Props { questions: Q[] }
 const { questions } = Astro.props;
 ---
-<div class="quiz">
+<div class="quiz not-content">
 	{questions.map((item, i) => (
 		<div class="quiz-q" data-ok={item.ok}>
 			<h3>{i + 1}. {item.q}</h3>

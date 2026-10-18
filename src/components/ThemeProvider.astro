@@ -1,0 +1,18 @@
+---
+/**
+ * Tema scuro di default. Alla prima visita salva "dark" come scelta,
+ * poi lascia fare a Starlight: chi sceglie chiaro o automatico dal menu
+ * se lo vede ricordato.
+ */
+import Default from '@astrojs/starlight/components/ThemeProvider.astro';
+---
+
+<script is:inline>
+	try {
+		if (localStorage.getItem('cern-theme-init') === null) {
+			if (!localStorage.getItem('starlight-theme')) localStorage.setItem('starlight-theme', 'dark');
+			localStorage.setItem('cern-theme-init', '1');
+		}
+	} catch {}
+</script>
+<Default />

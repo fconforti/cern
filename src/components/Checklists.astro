@@ -1,0 +1,16 @@
+---
+/** Rende spuntabili le checklist Markdown della pagina e ricorda le spunte su questo dispositivo. */
+---
+<script>
+	const key = 'checks:' + location.pathname;
+	let saved: Record<string, boolean> = {};
+	try { saved = JSON.parse(localStorage.getItem(key) ?? '{}'); } catch {}
+	document.querySelectorAll<HTMLInputElement>('.sl-markdown-content input[type="checkbox"]').forEach((box, i) => {
+		box.disabled = false;
+		box.checked = !!saved[i];
+		box.addEventListener('change', () => {
+			saved[i] = box.checked;
+			try { localStorage.setItem(key, JSON.stringify(saved)); } catch {}
+		});
+	});
+</script>

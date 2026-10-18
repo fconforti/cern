@@ -1,24 +1,30 @@
 ---
 title: 50 anni al CERN
-description: Un weekend in famiglia a Ginevra tra particelle, sauna sul lago e un tuffo nel Lemano. Questa è la guida per arrivare preparati.
+description: Un weekend in famiglia a Ginevra tra particelle, sauna sul lago e un tuffo nel Lemano. Il programma del viaggio e la guida per arrivare preparati.
 template: splash
 hero:
   title: 50 anni al CERN
-  tagline: Dal 30 gennaio al 1° febbraio 2027 andiamo tutti e otto a Ginevra, cento metri sopra l'anello più grande del mondo. Questo sito serve a capire, prima di partire, cosa andremo a vedere, perché lo costruiscono e cosa ci cercano dentro.
+  tagline: Ginevra, da sabato 30 gennaio a lunedì 1 febbraio 2027. Un weekend in famiglia tra particelle subatomiche, sauna sul porto e un tuffo nel lago.
   image:
     file: ../../assets/hero.svg
     alt: Tracce di particelle che escono da una collisione
   actions:
-    - text: Il programma del weekend
-      link: ./viaggio/programma/
+    - text: Il programma
+      link: '#il-programma'
       icon: right-arrow
-    - text: Comincia dalle basi
+    - text: Scarica il PDF
+      link: ./50-anni-al-CERN.pdf
+      icon: document
+      variant: secondary
+    - text: Prepararsi al CERN
       link: ./basi/quanto-e-piccolo/
-      variant: minimal
       icon: open-book
+      variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import Checklists from '../../components/Checklists.astro';
+
+import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
 import Countdown from '../../components/Countdown.astro';
 import YouTube from '../../components/YouTube.astro';
 import Go from '../../components/Go.astro';
@@ -27,40 +33,137 @@ import Go from '../../components/Go.astro';
 
 > «Dal più piccolo granello di sabbia alle stelle più lontane, tutto ciò che ci circonda è fatto di particelle fondamentali.»
 
-## Come usare questo sito
+## Perché il CERN
 
-Ogni pagina comincia con un riquadro **In due parole**, che basta per i più piccoli. Poi si va più a fondo, e alla fine c'è spesso un riquadro **Per chi vuole andare a fondo** pensato per i più grandi. I video sono in italiano quando possibile; quelli in inglese partono con i sottotitoli in italiano. Accanto a ogni video c'è l'età consigliata.
+Alle porte di Ginevra, cento metri sotto terra, c'è un anello di 27 chilometri in cui i protoni corrono quasi alla velocità della luce e si scontrano per ricreare le condizioni di un istante dopo il Big Bang. È il laboratorio di fisica più grande del mondo, e dal 2023 ha un centro visitatori progettato da Renzo Piano, lo Science Gateway: mostre interattive, laboratori dove si fanno esperimenti veri, spettacoli scientifici e visite guidate da fisici e ingegneri.
 
-Non serve leggere tutto. Il percorso consigliato, in ordine:
+Per i miei 50 anni mi sembrava il posto giusto: un compleanno dedicato alla curiosità, in un luogo che non assomiglia a nessun altro. E già che siamo a Ginevra, aggiungiamo un rito locale che merita: la sauna sul lago con tuffo nel Lemano.
+
+**Chi viene**: Filippo, Erika, Diego, Leonardo, Simone, Barbara, Chiara e Sofia. Otto in tutto: al CERN entriamo come famiglia, senza prenotazione di gruppo.
+
+Il programma completo è anche in PDF, da stampare o tenere sul telefono: [scarica il PDF](/50-anni-al-CERN.pdf).
+
+## Il programma
 
 <CardGrid>
-	<Card title="1. Le basi" icon="open-book">
-		Di cosa è fatto tutto: atomi, quark, elettroni e le quattro forze che li tengono insieme. Mezz'ora di lettura, cinque video.
+	<Card title="Sabato 30" icon="rocket">
+		Treno Firenze - Milano - Ginevra. Passeggiata sul lago e in città vecchia, fonduta sul molo.
 	</Card>
-	<Card title="2. Il CERN e la macchina" icon="setting">
-		Come si fanno correre i protoni a un soffio dalla velocità della luce, come si fanno scontrare e come si fotografa lo scontro.
+	<Card title="Domenica 31" icon="star">
+		Giornata al CERN. Poi sauna e tuffo nel lago, e pizza di compleanno.
 	</Card>
-	<Card title="3. Cosa stanno cercando" icon="magnifier">
-		Il bosone di Higgs, la materia oscura, l'antimateria scomparsa e il primo istante dell'universo.
-	</Card>
-	<Card title="4. La visita" icon="rocket">
-		Lo Science Gateway, la caccia al tesoro, le domande da fare alle guide e il quiz finale.
+	<Card title="Lunedì 1" icon="heart">
+		Rientro in treno con partenza comoda, a casa per le 18.
 	</Card>
 </CardGrid>
 
-## Per cominciare: il CERN in otto minuti
+### Sabato 30 gennaio: arrivo, lago e fonduta
 
-Se guardate un solo video prima di partire, guardate questo. È in italiano, dura poco e risponde alla domanda che si fanno tutti: ma a cosa serve?
+<Steps>
+
+1. **10:00** Partenza da Firenze Santa Maria Novella con il Frecciarossa. Arrivo a Milano Centrale verso le 11:50: un'ora e mezza per un pranzo veloce in stazione.
+
+2. **13:20** EuroCity Milano - Ginevra: quattro ore senza cambi attraverso il tunnel del Sempione e poi lungo il Lago Lemano da Montreux a Losanna. **Sedetevi a sinistra**: è uno dei tratti ferroviari più belli d'Europa.
+
+3. **17:20** Arrivo a Genève-Cornavin. L'hotel Auteuil Manotel (rue de Lausanne 33) è a quattro minuti a piedi, nel quartiere dei Pâquis: due camere familiari comunicanti. All'arrivo ci danno la **Geneva Transport Card**: tram, bus e battelli gratis per tutto il soggiorno.
+
+4. **18:00** Passeggiata: il quai du Mont-Blanc fino al **Jet d'eau**, il getto d'acqua alto 140 metri, il ponte sul Rodano, poi su per la città vecchia fino alla cattedrale di Saint-Pierre e place du Bourg-de-Four.
+
+5. **19:30** Fonduta alla buvette dei **Bains des Pâquis**, nella sala sul lago con le luci di Ginevra sull'acqua. La classica è la *moitié-moitié*, metà Gruyère e metà Vacherin.
+
+</Steps>
+
+:::note
+I biglietti Firenze-Milano e Milano-Ginevra sono separati, per questo c'è un'ora e mezza di margine a Milano: anche con un ritardo l'EuroCity delle 13:20 non si perde.
+:::
+
+### Domenica 31 gennaio: particelle, sauna, pizza
+
+<Steps>
+
+1. **8:30** Colazione e **tram 18** dalla fermata Môle, a un minuto dall'hotel: in 25 minuti porta al capolinea *Meyrin, CERN*, davanti allo Science Gateway.
+
+2. **9:00** Arrivo all'apertura. Check-in e, dal telefono, prenotazione di visita guidata e laboratorio. **Si prenotano solo sul posto**: la visita due ore prima dell'inizio, il laboratorio un'ora prima, 24 posti in ordine di arrivo. Per questo arriviamo presto. I dettagli sono nella pagina [Lo Science Gateway](/visita/science-gateway/).
+
+3. **Mattina** Le tre mostre permanenti: **Discover CERN** (come funziona l'acceleratore, con un piccolo acceleratore vero), **Our Universe** (da cosa è fatto tutto) e **Quantum World** (la meccanica quantistica). Tutto si tocca e si prova.
+
+4. **Pranzo** Al **Big Bang Café** dello Science Gateway, oppure nella mensa del CERN dove mangiano i fisici.
+
+5. **Pomeriggio** Visita guidata per chi ha almeno 12 anni, laboratorio o science show per i più piccoli. Verso le 15 abbiamo visto tutto.
+
+6. **17:00** **Bains des Pâquis**, i bagni pubblici del 1932 sul molo davanti al Jet d'eau. D'inverno sono una spa popolare con due saune in legno affacciate sul lago, bagno turco e hammam. Il rito: sauna, poi giù dalla scaletta nel Lemano (6-7 gradi), poi di nuovo in sauna. Tre giri e si rinasce. Chi preferisce fa la doccia fredda. Ingresso 22 CHF, ultimo ingresso 20:30.
+
+7. **19:30** Pizza di compleanno da **Luigia**, in rue Adhémar-Fabri, a due passi dall'hotel: napoletana verace, rumorosa, piena di famiglie.
+
+</Steps>
+
+:::caution[Da sapere per il CERN]
+Tutto è gratuito, ma conviene **registrarsi online** su visit.cern fino a un mese prima: garantisce l'ingresso. Le mostre sono consigliate dagli 8 anni, le visite guidate dai **12**, i laboratori dai 5 in su a seconda del tema. Sotto i 16 anni sempre con un adulto. Per la visita guidata serve il **documento**, perché alcuni percorsi passano in Francia.
+:::
+
+### Lunedì 1 febbraio: rientro con calma
+
+<Steps>
+
+1. **Mattina** Colazione lenta. Chi vuole fa un'ultima passeggiata sul lago o un salto al mercato coperto di Plainpalais.
+
+2. **11:39** EuroCity Ginevra - Milano, arrivo verso le 15:40. Stavolta il lago è sulla **destra**.
+
+3. **16:10** Frecciarossa Milano - Firenze. A casa per le 18.
+
+</Steps>
+
+## Prepararsi al CERN
+
+Il resto del sito serve a capire, prima di partire, cosa andremo a vedere, perché lo costruiscono e cosa ci cercano dentro. Ogni pagina comincia con un riquadro **In due parole** che basta per i più piccoli, e finisce con **Per chi vuole andare a fondo** per i più grandi. Accanto a ogni video c'è l'età consigliata.
+
+Se guardate un solo video prima di partire, guardate questo:
 
 <YouTube id="GPYSRkXr5o4" title="Il CERN di Ginevra ci serve davvero? Vediamo cosa fanno nel laboratorio di fisica delle particelle" channel="Geopop" min="7:51" age="8+" />
 
-## Chi viene
-
-Filippo, Erika, Diego, Leonardo, Simone, Barbara, Chiara e Sofia. Otto in tutto: al CERN entriamo come famiglia, senza prenotazione di gruppo.
+Il percorso consigliato, in ordine:
 
 <CardGrid>
-	<Go to="viaggio/programma/" title="Il programma" description="Treni, orari, hotel, fonduta, sauna e pizza di compleanno." />
-	<Go to="visita/science-gateway/" title="Lo Science Gateway" description="Cosa c'è dentro, come si prenotano visite e laboratori, cosa portare." />
-	<Go to="videoteca/" title="Videoteca" description="Tutti i video del sito in un'unica pagina, ordinati per argomento ed età." />
-	<Go to="visita/quiz/" title="Il quiz" description="Quindici domande per scoprire chi è pronto per il CERN." />
+	<Go to="basi/quanto-e-piccolo/" title="1. Le basi" description="Di cosa è fatto tutto: atomi, quark, elettroni e le quattro forze." />
+	<Go to="cern/cosa-e/" title="2. Il CERN e la macchina" description="Come si fanno correre e scontrare i protoni, e come si fotografa lo scontro." />
+	<Go to="ricerca/higgs/" title="3. Cosa stanno cercando" description="Il bosone di Higgs, la materia oscura, l'antimateria, il primo istante dell'universo." />
+	<Go to="visita/science-gateway/" title="4. La visita" description="Lo Science Gateway, la caccia al tesoro e il quiz finale." />
 </CardGrid>
+
+## Cosa mettere in valigia
+
+- [ ] **Costume da bagno** per la sauna e il lago (gli asciugamani li noleggiamo lì)
+- [ ] **Ciabatte di gomma** per il molo
+- [ ] **Scarpe comode e giacca calda**: si cammina molto e a fine gennaio sul lago tira vento, 2-6 gradi di giorno. Strati e cappello
+- [ ] **Carta d'identità**: la Svizzera è fuori dall'UE ma in Schengen. Serve anche per la visita guidata al CERN
+- [ ] **Telefono carico**: al CERN visite e laboratori si prenotano dal telefono
+- [ ] **Qualche franco svizzero** o una carta che funzioni all'estero: il CERN è gratis, la sauna e il resto no
+- [ ] **Un quaderno piccolo** per la [caccia al tesoro](/visita/caccia-al-tesoro/)
+
+Prima di partire:
+
+- [ ] Registrazione online allo Science Gateway su visit.cern
+- [ ] Tavolo per otto ai Bains des Pâquis (sabato) e da Luigia (domenica)
+- [ ] Biglietti del treno sul telefono
+- [ ] [Il quiz](/visita/quiz/) fatto almeno una volta
+
+## Ginevra in breve
+
+- **Il Jet d'eau** sale a 140 metri, più della cupola del Duomo di Firenze. È nato per caso nel 1886 come valvola di sfogo dell'acquedotto. D'inverno lo spengono se c'è troppo vento o gelo.
+- **I Bains des Pâquis** sono su un molo del 1932 che entra nel lago: spiaggia d'estate, sauna d'inverno, fonduta la sera.
+- **La cattedrale di Saint-Pierre**: dalla torre, 157 gradini, si vedono il lago e nelle giornate limpide il Monte Bianco.
+- **L'Orologio dei fiori** nel Jardin Anglais ha 6 500 piante e la lancetta dei secondi più lunga del mondo.
+- **Le Mouettes**, i battelli gialli che attraversano il porto, sono comprese nella Geneva Transport Card.
+
+<YouTube id="vCecWoJPZHQ" title="Viaggio a Ginevra: cosa vedere assolutamente, itinerario in 4K" channel="viaggiamoeasy" min="2:25" age="8+" />
+
+## Logistica
+
+- **Alloggio**: Hotel Auteuil Manotel, rue de Lausanne 33, a 4 minuti dalla stazione e 10 dal lago. Colazione a buffet 7-11 nel weekend; la sera niente ristorante, ma il quartiere ne è pieno.
+- **Spostamenti**: tutto a piedi, il CERN con il tram 18.
+- **Treni**: orari indicativi, quelli del 2027 escono a dicembre.
+- **Lingua**: francese, ma al CERN si parla di tutto, italiano compreso.
+
+*Buon compleanno a me, e grazie di venire! — Filippo*
+
+<Checklists />

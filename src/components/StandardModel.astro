@@ -12,7 +12,7 @@ const bosons = [
 	['Z', 'bosone Z', 'forza debole'], ['W', 'bosone W', 'forza debole'],
 ];
 ---
-<div class="sm" role="table" aria-label="Le particelle del Modello Standard">
+<div class="sm not-content" role="table" aria-label="Le particelle del Modello Standard">
 	<div class="sm-head">Quark (si uniscono per formare protoni e neutroni) · 1ª, 2ª e 3ª generazione</div>
 	{quarks.slice(0, 3).map(([s, n, m]) => <div class="sm-cell quark"><span class="sym">{s}</span><span class="name">{n}</span><span class="sub">{m}</span></div>)}
 	<div class="sm-cell boson"><span class="sym">γ</span><span class="name">fotone</span><span class="sub">luce, elettromagnetismo</span></div>
@@ -26,7 +26,7 @@ const bosons = [
 	<div class="sm-head">E poi, da solo…</div>
 	<div class="sm-cell higgs" style="grid-column: 1 / 3"><span class="sym">H</span><span class="name">bosone di Higgs</span><span class="sub">125 GeV · dà la massa alle altre</span></div>
 </div>
-<p class="sm-legend">
+<p class="sm-legend not-content">
 	<span><i style="background:var(--fam-violet)"></i>quark</span>
 	<span><i style="background:var(--fam-green)"></i>leptoni</span>
 	<span><i style="background:var(--fam-orange)"></i>portatori di forza</span>
