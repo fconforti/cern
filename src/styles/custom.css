@@ -169,3 +169,13 @@ html, body { overflow-x: clip; }
   .hero .actions .sl-link-button.minimal { border-color: var(--sl-color-gray-5); }
   .hero .stack { width: 100%; }
 }
+
+/* Sottotitoli sopra le griglie di riquadri */
+.sl-markdown-content .tiles-heading {
+  margin-top: 1.5rem;
+  font-size: .8rem;
+  font-family: var(--sl-font);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sl-color-gray-3);
+}

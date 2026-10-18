@@ -1,0 +1,160 @@
+---
+/**
+ * Griglia di riquadri con icona neon. Con `checkable` ogni riquadro si spunta
+ * toccandolo, e le spunte restano salvate su questo dispositivo.
+ */
+import { icons, type IconName } from './icons';
+
+export interface Tile {
+	icon: IconName;
+	color: string;
+	label?: string;
+	title: string;
+	lines?: string[];
+	link?: { href: string; text: string };
+}
+interface Props { tiles: Tile[]; checkable?: boolean; storeKey?: string }
+const { tiles, checkable = false, storeKey = 'tiles' } = Astro.props;
+---
+
+<div class:list={['tiles not-content', { checkable }]} data-store={checkable ? storeKey : undefined}>
+	{tiles.map((t, i) => {
+		const body = (
+			<>
+				<div class="tile-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={icons[t.icon]} />
+				</div>
+				<div class="tile-body">
+					{t.label && <p class="tile-label">{t.label}</p>}
+					<h3 class="tile-title">{t.title}</h3>
+					{t.lines?.map((l) => <p class="tile-line">{l}</p>)}
+					{t.link && <a class="tile-link" href={t.link.href} target="_blank" rel="noopener">{t.link.text} ↗</a>}
+				</div>
+			</>
+		);
+		return checkable ? (
+			<label class="tile" style={`--c:${t.color}`}>
+				<input type="checkbox" class="tile-check" data-i={i} />
+				{body}
+				<span class="tile-tick" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+				</span>
+			</label>
+		) : (
+			<article class="tile" style={`--c:${t.color}`}>{body}</article>
+		);
+	})}
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>('.tiles[data-store]').forEach((grid) => {
+		const key = 'tiles:' + grid.dataset.store;
+		let saved: Record<string, boolean> = {};
+		try { saved = JSON.parse(localStorage.getItem(key) ?? '{}'); } catch {}
+		grid.querySelectorAll<HTMLInputElement>('.tile-check').forEach((box) => {
+			const i = box.dataset.i ?? '';
+			box.checked = !!saved[i];
+			box.addEventListener('change', () => {
+				saved[i] = box.checked;
+				try { localStorage.setItem(key, JSON.stringify(saved)); } catch {}
+			});
+		});
+	});
+</script>
+
+<style>
+	.tiles {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: .75rem;
+		margin: 1.25rem 0;
+	}
+	@media (min-width: 36rem) {
+		.tiles { grid-template-columns: 1fr 1fr; }
+	}
+	.tile {
+		position: relative;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: .9rem;
+		align-items: start;
+		padding: 1rem 1.1rem;
+		border-radius: 16px;
+		border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+		background:
+			radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--c) 12%, transparent), transparent 60%),
+			var(--sl-color-gray-6);
+		box-shadow: 0 0 18px color-mix(in srgb, var(--c) 10%, transparent);
+	}
+	.tile-icon {
+		width: 2.6rem;
+		height: 2.6rem;
+		border-radius: 12px;
+		display: grid;
+		place-items: center;
+		color: var(--c);
+		background: color-mix(in srgb, var(--c) 12%, transparent);
+		border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+		filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c) 55%, transparent));
+	}
+	.tile-icon svg { width: 1.5rem; height: 1.5rem; }
+	.tile-label {
+		margin: 0;
+		font-size: .72rem;
+		font-weight: 600;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+		color: var(--c);
+	}
+	.tile-title {
+		margin: .15rem 0 .4rem;
+		font-family: var(--sl-font-headings);
+		font-size: 1.15rem;
+		line-height: 1.25;
+		color: var(--sl-color-white);
+	}
+	.tile-line {
+		margin: 0 0 .35rem;
+		font-size: .9rem;
+		line-height: 1.5;
+		color: var(--sl-color-gray-2);
+	}
+	.tile-link {
+		display: inline-block;
+		margin-top: .3rem;
+		padding: .3rem .75rem;
+		border-radius: 999px;
+		font-size: .82rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--c);
+		border: 1px solid color-mix(in srgb, var(--c) 55%, transparent);
+	}
+	.tile-link:hover { background: color-mix(in srgb, var(--c) 14%, transparent); }
+
+	/* Riquadri spuntabili */
+	.checkable .tile { cursor: pointer; padding-right: 3.2rem; transition: opacity .2s, border-color .2s; }
+	.tile-check { position: absolute; opacity: 0; width: 1px; height: 1px; }
+	.tile-tick {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 1.6rem;
+		height: 1.6rem;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		border: 2px solid color-mix(in srgb, var(--c) 60%, transparent);
+		color: transparent;
+		transition: background .2s, color .2s, box-shadow .2s;
+	}
+	.tile-tick svg { width: 1rem; height: 1rem; }
+	.tile:has(.tile-check:checked) { opacity: .6; }
+	.tile:has(.tile-check:checked) .tile-title { text-decoration: line-through; text-decoration-color: var(--c); }
+	.tile:has(.tile-check:checked) .tile-tick {
+		background: var(--c);
+		color: #04122b;
+		box-shadow: 0 0 10px color-mix(in srgb, var(--c) 70%, transparent);
+	}
+	.tile:has(.tile-check:focus-visible) { outline: 2px solid var(--c); outline-offset: 2px; }
+</style>

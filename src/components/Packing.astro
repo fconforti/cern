@@ -1,0 +1,28 @@
+---
+import InfoTiles, { type Tile } from './InfoTiles.astro';
+
+const bag: Tile[] = [
+	{ icon: 'waves', color: 'var(--fam-cyan)', title: 'Costume da bagno', lines: ['Per la sauna e il tuffo nel lago. Gli asciugamani li noleggiamo lì.'] },
+	{ icon: 'flipflop', color: 'var(--fam-pink)', title: 'Ciabatte di gomma', lines: ['Per il molo dei Bains des Pâquis.'] },
+	{ icon: 'jacket', color: 'var(--fam-violet)', title: 'Giacca calda e scarpe comode', lines: ['Si cammina tanto e sul lago tira vento. Strati, cappello, sciarpa.'] },
+	{ icon: 'id', color: 'var(--fam-orange)', title: 'Carta d’identità', lines: ['Per entrare in Svizzera e per la visita guidata al CERN.'] },
+	{ icon: 'phone', color: 'var(--fam-green)', title: 'Telefono carico', lines: ['Al CERN visite e laboratori si prenotano dal telefono.'] },
+	{ icon: 'card', color: 'var(--fam-cyan)', title: 'Carta o franchi svizzeri', lines: ['Il CERN è gratis, la sauna e il resto no.'] },
+	{ icon: 'notebook', color: 'var(--fam-pink)', title: 'Un quaderno piccolo', lines: ['Per la caccia al tesoro allo Science Gateway.'], link: { href: 'visita/caccia-al-tesoro/', text: 'Caccia al tesoro' } },
+];
+
+const before: Tile[] = [
+	{ icon: 'atom', color: 'var(--fam-green)', title: 'Registrazione al CERN', lines: ['Online su visit.cern, gratis, fino a un mese prima.'], link: { href: 'https://visit.cern/', text: 'visit.cern' } },
+	{ icon: 'fork', color: 'var(--fam-orange)', title: 'Tavoli per otto', lines: ['Bains des Pâquis sabato sera, Luigia domenica sera.'] },
+	{ icon: 'ticket', color: 'var(--fam-violet)', title: 'Biglietti del treno', lines: ['Sul telefono, andata e ritorno.'] },
+	{ icon: 'question', color: 'var(--fam-pink)', title: 'Il quiz', lines: ['Fatto almeno una volta da tutti.'], link: { href: 'visita/quiz/', text: 'Fai il quiz' } },
+];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+const withBase = (tiles: Tile[]) =>
+	tiles.map((t) => (t.link && !t.link.href.startsWith('http') ? { ...t, link: { ...t.link, href: base + t.link.href } } : t));
+---
+<h3 class="tiles-heading">In valigia</h3>
+<InfoTiles tiles={withBase(bag)} checkable storeKey="valigia" />
+<h3 class="tiles-heading">Prima di partire</h3>
+<InfoTiles tiles={withBase(before)} checkable storeKey="prima" />

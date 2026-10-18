@@ -1,0 +1,13 @@
+---
+import InfoTiles, { type Tile } from './InfoTiles.astro';
+
+const tiles: Tile[] = [
+	{ icon: 'fountain', color: 'var(--fam-cyan)', label: 'Il simbolo', title: 'Jet d’eau', lines: ['Un getto d’acqua alto 140 metri, più della cupola del Duomo di Firenze. È nato per caso nel 1886, come valvola di sfogo dell’acquedotto.', 'D’inverno lo spengono se c’è troppo vento o gelo.'] },
+	{ icon: 'steam', color: 'var(--fam-pink)', label: 'Sauna sul lago', title: 'Bains des Pâquis', lines: ['Bagni pubblici del 1932 su un molo che entra nel lago. Spiaggia d’estate, sauna d’inverno.', 'Il rito: sauna, tuffo nel Lemano, di nuovo sauna.'] },
+	{ icon: 'pot', color: 'var(--fam-orange)', label: 'Si mangia', title: 'Fonduta moitié-moitié', lines: ['Metà Gruyère e metà Vacherin, alla buvette dei Bains con le luci della città sull’acqua.'] },
+	{ icon: 'church', color: 'var(--fam-violet)', label: 'Città vecchia', title: 'Cattedrale di Saint-Pierre', lines: ['Dalla torre, 157 gradini, si vedono il lago e nelle giornate limpide il Monte Bianco.', 'Sotto c’è place du Bourg-de-Four, la piazza più antica.'] },
+	{ icon: 'clock', color: 'var(--fam-green)', label: 'Jardin Anglais', title: 'Orologio dei fiori', lines: ['6 500 piante e la lancetta dei secondi più lunga del mondo: 2,5 metri.'] },
+	{ icon: 'boat', color: 'var(--fam-cyan)', label: 'Sul porto', title: 'Le Mouettes', lines: ['I battelli gialli che attraversano il porto. Con la Geneva Transport Card sono gratis.'] },
+];
+---
+<InfoTiles tiles={tiles} />

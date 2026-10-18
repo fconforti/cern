@@ -22,13 +22,14 @@ hero:
       variant: minimal
 ---
 
-import Checklists from '../../components/Checklists.astro';
 
 import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
 import Countdown from '../../components/Countdown.astro';
 import YouTube from '../../components/YouTube.astro';
 import Go from '../../components/Go.astro';
 import Logistics from '../../components/Logistics.astro';
+import Packing from '../../components/Packing.astro';
+import Geneva from '../../components/Geneva.astro';
 
 <Countdown to="2027-01-31T09:00:00+01:00" />
 
@@ -133,28 +134,13 @@ Il percorso consigliato, in ordine:
 
 ## Cosa mettere in valigia
 
-- [ ] **Costume da bagno** per la sauna e il lago (gli asciugamani li noleggiamo lì)
-- [ ] **Ciabatte di gomma** per il molo
-- [ ] **Scarpe comode e giacca calda**: si cammina molto e a fine gennaio sul lago tira vento, 2-6 gradi di giorno. Strati e cappello
-- [ ] **Carta d'identità**: la Svizzera è fuori dall'UE ma in Schengen. Serve anche per la visita guidata al CERN
-- [ ] **Telefono carico**: al CERN visite e laboratori si prenotano dal telefono
-- [ ] **Qualche franco svizzero** o una carta che funzioni all'estero: il CERN è gratis, la sauna e il resto no
-- [ ] **Un quaderno piccolo** per la [caccia al tesoro](/visita/caccia-al-tesoro/)
+Tocca un riquadro per spuntarlo: le spunte restano salvate su questo telefono.
 
-Prima di partire:
-
-- [ ] Registrazione online allo Science Gateway su visit.cern
-- [ ] Tavolo per otto ai Bains des Pâquis (sabato) e da Luigia (domenica)
-- [ ] Biglietti del treno sul telefono
-- [ ] [Il quiz](/visita/quiz/) fatto almeno una volta
+<Packing />
 
 ## Ginevra in breve
 
-- **Il Jet d'eau** sale a 140 metri, più della cupola del Duomo di Firenze. È nato per caso nel 1886 come valvola di sfogo dell'acquedotto. D'inverno lo spengono se c'è troppo vento o gelo.
-- **I Bains des Pâquis** sono su un molo del 1932 che entra nel lago: spiaggia d'estate, sauna d'inverno, fonduta la sera.
-- **La cattedrale di Saint-Pierre**: dalla torre, 157 gradini, si vedono il lago e nelle giornate limpide il Monte Bianco.
-- **L'Orologio dei fiori** nel Jardin Anglais ha 6 500 piante e la lancetta dei secondi più lunga del mondo.
-- **Le Mouettes**, i battelli gialli che attraversano il porto, sono comprese nella Geneva Transport Card.
+<Geneva />
 
 <YouTube id="vCecWoJPZHQ" title="Viaggio a Ginevra: cosa vedere assolutamente, itinerario in 4K" channel="viaggiamoeasy" min="2:25" age="8+" />
 
@@ -164,4 +150,3 @@ Prima di partire:
 
 *Buon compleanno a me, e grazie di venire! — Filippo*
 
-<Checklists />
