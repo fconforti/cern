@@ -17,7 +17,23 @@ const glow = `${glowId}-glow`;
 	<g filter={`url(#${glow})`} fill="none" stroke="#7fd1ff" stroke-linecap="round" stroke-linejoin="round">
 		<path d="M36 10H14l-2.5 19c3.5-2.5 8.5-3.5 12.5-3 8 1 13 7 13 15 0 9-7 15-15 15-6 0-11-3-13.5-8" stroke-width="7" />
 		<circle cx="70" cy="33" r="22.5" stroke-width="7" />
-		<circle cx="85.9" cy="17.1" r="7.5" fill="#7fd1ff" fill-opacity=".28" stroke="none" />
-		<circle cx="85.9" cy="17.1" r="4.6" fill="#e3f6ff" stroke="none" />
+		<g class="orbit">
+			<circle cx="85.9" cy="17.1" r="7.5" fill="#7fd1ff" fill-opacity=".28" stroke="none" />
+			<circle cx="85.9" cy="17.1" r="4.6" fill="#e3f6ff" stroke="none" />
+		</g>
 	</g>
 </svg>
+
+<style>
+	.orbit {
+		transform-box: view-box;
+		transform-origin: 70px 33px;
+		animation: orbit 4s linear infinite;
+	}
+	@keyframes orbit {
+		to { transform: rotate(360deg); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.orbit { animation: none; }
+	}
+</style>
