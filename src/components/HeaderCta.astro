@@ -8,6 +8,21 @@ const href = import.meta.env.BASE_URL.replace(/\/$/, '') + '/basi/quanto-e-picco
 	<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
 </a>
 
+<script>
+	const cta = document.querySelector<HTMLElement>('.header-cta');
+	const hero = document.querySelector('.hero');
+	if (cta && hero) {
+		const navHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sl-nav-height')) * 16 || 64;
+		new IntersectionObserver(
+			([entry]) => {
+				const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+				cta.classList.toggle('is-visible', passed);
+			},
+			{ rootMargin: `-${navHeight}px 0px 0px 0px` },
+		).observe(hero);
+	}
+</script>
+
 <style>
 	.header-cta {
 		margin-inline-start: auto;
@@ -24,7 +39,14 @@ const href = import.meta.env.BASE_URL.replace(/\/$/, '') + '/basi/quanto-e-picco
 		white-space: nowrap;
 		text-decoration: none;
 		box-shadow: 0 0 10px rgba(127, 209, 255, .6), 0 0 26px rgba(127, 209, 255, .3);
-		transition: box-shadow .2s;
+		transition: box-shadow .2s, opacity .25s ease, transform .25s ease, visibility .25s;
+	}
+	/* In home resta nascosto finché la hero è visibile. */
+	:global(:root:has(.hero)) .header-cta:not(.is-visible) {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transform: translateY(-6px);
 	}
 	.header-cta:hover { color: #04122b; box-shadow: 0 0 14px rgba(127, 209, 255, .9), 0 0 36px rgba(127, 209, 255, .5); }
 	.short { display: none; }
