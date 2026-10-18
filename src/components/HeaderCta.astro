@@ -9,6 +9,11 @@ const href = import.meta.env.BASE_URL.replace(/\/$/, '') + '/basi/quanto-e-picco
 </a>
 
 <script>
+	// Barra in alto: segna quando la pagina è stata scorsa (vedi custom.css).
+	const onScroll = () => document.documentElement.toggleAttribute('data-scrolled', window.scrollY > 4);
+	onScroll();
+	window.addEventListener('scroll', onScroll, { passive: true });
+
 	const cta = document.querySelector<HTMLElement>('.header-cta');
 	const hero = document.querySelector('.hero');
 	if (cta && hero) {
