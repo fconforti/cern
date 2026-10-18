@@ -3,15 +3,15 @@ import LogoMark from './LogoMark.astro';
 const { siteTitleHref } = Astro.locals.starlightRoute;
 ---
 <a href={siteTitleHref} class="site-title brand" aria-label="50 anni al CERN, home">
+	<span class="brand-text" translate="no">CERN</span>
 	<LogoMark class="brand-mark" glowId="brand-glow" />
-	<span class="brand-text" translate="no">anni al CERN</span>
 </a>
 
 <style>
 	.brand {
 		display: flex;
 		align-items: center;
-		gap: .55rem;
+		gap: .45rem;
 		text-decoration: none;
 		white-space: nowrap;
 		min-width: 0;
@@ -20,8 +20,9 @@ const { siteTitleHref } = Astro.locals.starlightRoute;
 	.brand-text {
 		font-family: var(--sl-font-headings);
 		font-weight: 800;
-		font-size: 1.2rem;
-		letter-spacing: -.01em;
+		font-size: 1.45rem;
+		letter-spacing: .02em;
+		line-height: 1;
 		color: #f4fbff;
 		text-shadow: 0 0 8px rgba(127, 209, 255, .55), 0 0 18px rgba(255, 126, 182, .3);
 		overflow: hidden;
