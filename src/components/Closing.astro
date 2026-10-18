@@ -1,0 +1,89 @@
+---
+/** Il saluto finale della home. */
+import LogoMark from './LogoMark.astro';
+const dots = [
+	{ x: 8, y: 18, c: 'var(--fam-cyan)', d: 0 },
+	{ x: 88, y: 12, c: 'var(--fam-pink)', d: 1.2 },
+	{ x: 16, y: 78, c: 'var(--fam-orange)', d: 2.1 },
+	{ x: 92, y: 70, c: 'var(--fam-green)', d: .6 },
+	{ x: 50, y: 6, c: 'var(--fam-violet)', d: 1.7 },
+	{ x: 70, y: 90, c: 'var(--fam-cyan)', d: 2.6 },
+	{ x: 30, y: 92, c: 'var(--fam-pink)', d: .3 },
+];
+---
+<section class="closing not-content" aria-label="Un saluto da Filippo">
+	{dots.map((p) => <span class="dot" aria-hidden="true" style={`left:${p.x}%;top:${p.y}%;--c:${p.c};animation-delay:${p.d}s`} />)}
+	<LogoMark class="closing-mark" glowId="closing" />
+	<p class="closing-title">Grazie di venire!</p>
+	<p class="closing-sub">Buon compleanno a me.</p>
+	<p class="closing-sign">Filippo</p>
+	<p class="closing-date">Ginevra · 31 gennaio 2027</p>
+</section>
+
+<style>
+	.closing {
+		position: relative;
+		overflow: hidden;
+		margin: 3rem 0 1rem;
+		padding: 2.5rem 1.25rem 2.25rem;
+		border-radius: 24px;
+		text-align: center;
+		border: 1px solid rgba(127, 209, 255, .45);
+		background:
+			radial-gradient(60% 70% at 50% 0%, rgba(127, 209, 255, .18), transparent 70%),
+			radial-gradient(50% 60% at 100% 100%, rgba(255, 126, 182, .14), transparent 70%),
+			radial-gradient(50% 60% at 0% 100%, rgba(195, 155, 255, .12), transparent 70%),
+			var(--sl-color-gray-6);
+		box-shadow: 0 0 24px rgba(127, 209, 255, .18), inset 0 0 40px rgba(127, 209, 255, .06);
+	}
+	.closing-mark { width: 7rem; height: auto; margin: 0 auto 1rem; display: block; }
+	.closing p { margin: 0; }
+	.closing-title {
+		font-family: var(--sl-font-headings);
+		font-weight: 800;
+		font-size: clamp(2rem, 8vw, 3rem);
+		line-height: 1.1;
+		color: #f4fbff;
+		text-shadow: 0 0 6px rgba(255, 255, 255, .5), 0 0 18px rgba(127, 209, 255, .8), 0 0 40px rgba(127, 209, 255, .45);
+	}
+	.closing-sub {
+		margin-top: .6rem !important;
+		font-size: 1.15rem;
+		color: var(--sl-color-gray-1);
+	}
+	.closing-sign {
+		margin-top: 1.5rem !important;
+		font-family: var(--sl-font-headings);
+		font-style: italic;
+		font-weight: 500;
+		font-size: 1.6rem;
+		color: var(--fam-pink);
+		text-shadow: 0 0 12px rgba(255, 126, 182, .55);
+	}
+	.closing-sign::before { content: '— '; opacity: .7; }
+	.closing-date {
+		margin-top: .35rem !important;
+		font-size: .78rem;
+		font-weight: 600;
+		letter-spacing: .12em;
+		text-transform: uppercase;
+		color: var(--sl-color-gray-3);
+	}
+	.dot {
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: var(--c);
+		box-shadow: 0 0 8px var(--c), 0 0 16px var(--c);
+		opacity: .8;
+		animation: drift 6s ease-in-out infinite alternate;
+	}
+	@keyframes drift {
+		from { transform: translate(0, 0); opacity: .35; }
+		to { transform: translate(10px, -14px); opacity: .9; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.dot { animation: none; }
+	}
+</style>
