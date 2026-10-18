@@ -1,0 +1,8 @@
+---
+/** Link interno che rispetta `base` (per GitHub Pages). */
+import { LinkCard } from '@astrojs/starlight/components';
+interface Props { to: string; title: string; description?: string }
+const { to, title, description } = Astro.props;
+const href = import.meta.env.BASE_URL.replace(/\/$/, '') + '/' + to.replace(/^\//, '');
+---
+<LinkCard title={title} description={description} href={href} />

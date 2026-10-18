@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffb347" stop-opacity="1"/>
+      <stop offset="0.35" stop-color="#ff7eb6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#0b1b3a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" stroke-width="2" opacity="0.55">
+    <circle cx="200" cy="200" r="190" stroke="#3b82f6" stroke-dasharray="6 10"/>
+    <circle cx="200" cy="200" r="150" stroke="#3b82f6" opacity="0.7"/>
+    <circle cx="200" cy="200" r="110" stroke="#7fd1ff" opacity="0.6"/>
+    <circle cx="200" cy="200" r="70" stroke="#7fd1ff" opacity="0.5"/>
+  </g>
+  <circle cx="200" cy="200" r="60" fill="url(#g)"/>
+  <g fill="none" stroke-linecap="round" stroke-width="2.5">
+    <path d="M200 200 C 240 160, 300 150, 380 120" stroke="#ffb347"/>
+    <path d="M200 200 C 230 250, 290 300, 350 360" stroke="#7fd1ff"/>
+    <path d="M200 200 C 150 170, 90 130, 30 90" stroke="#ff7eb6"/>
+    <path d="M200 200 C 160 240, 110 300, 60 370" stroke="#7ee2a8"/>
+    <path d="M200 200 C 210 140, 215 80, 200 15" stroke="#c39bff"/>
+    <path d="M200 200 C 260 205, 330 215, 390 240" stroke="#ff7eb6"/>
+    <path d="M200 200 C 140 205, 70 230, 10 260" stroke="#7fd1ff"/>
+    <path d="M200 200 C 205 260, 195 330, 180 390" stroke="#ffb347"/>
+    <path d="M200 200 C 240 190, 310 170, 370 60" stroke="#7ee2a8" opacity="0.7"/>
+    <path d="M200 200 C 170 190, 110 160, 60 40" stroke="#c39bff" opacity="0.7"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="380" cy="120" r="3"/><circle cx="350" cy="360" r="3"/><circle cx="30" cy="90" r="3"/>
+    <circle cx="60" cy="370" r="3"/><circle cx="200" cy="15" r="3"/><circle cx="390" cy="240" r="3"/>
+    <circle cx="10" cy="260" r="3"/><circle cx="180" cy="390" r="3"/>
+  </g>
+  <circle cx="200" cy="200" r="7" fill="#ffffff"/>
+</svg>

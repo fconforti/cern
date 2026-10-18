@@ -1,0 +1,58 @@
+---
+/**
+ * Player YouTube "leggero": mostra l'anteprima e carica l'iframe solo al click.
+ * Per i video in inglese attiva i sottotitoli in italiano quando disponibili.
+ */
+interface Props {
+	id: string;
+	title: string;
+	channel?: string;
+	min?: string; // durata, es. "7:51"
+	lang?: 'it' | 'en';
+	age?: string; // es. "8+", "12+"
+	note?: string;
+	start?: number;
+}
+const { id, title, channel, min, lang = 'it', age, note, start } = Astro.props;
+const params = new URLSearchParams({ autoplay: '1', rel: '0', hl: 'it' });
+if (lang === 'en') {
+	params.set('cc_load_policy', '1');
+	params.set('cc_lang_pref', 'it');
+}
+if (start) params.set('start', String(start));
+const src = `https://www.youtube-nocookie.com/embed/${id}?${params.toString()}`;
+const poster = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+const fallback = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+
+<figure class="yt" data-src={src} data-title={title}>
+	<div class="yt-frame">
+		<button class="yt-poster" type="button" aria-label={`Guarda il video: ${title}`}>
+			<img src={poster} alt="" loading="lazy" onerror={`this.onerror=null;this.src='${fallback}'`} />
+			<span class="yt-play" aria-hidden="true"></span>
+		</button>
+	</div>
+	<figcaption>
+		<strong>{title}</strong>
+		{channel && <span>· {channel}</span>}
+		{min && <span class="pill pill-min">{min}</span>}
+		{age && <span class="pill pill-age">dagli {age.replace('+', '')} anni</span>}
+		<span class="pill pill-lang">{lang === 'en' ? 'inglese, sottotitoli in italiano' : 'italiano'}</span>
+		{note && <span class="note">{note}</span>}
+	</figcaption>
+</figure>
+
+<script>
+	document.querySelectorAll<HTMLElement>('.yt').forEach((fig) => {
+		const btn = fig.querySelector<HTMLButtonElement>('.yt-poster');
+		btn?.addEventListener('click', () => {
+			const iframe = document.createElement('iframe');
+			iframe.src = fig.dataset.src ?? '';
+			iframe.title = fig.dataset.title ?? 'Video YouTube';
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+			iframe.allowFullscreen = true;
+			iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+			btn.replaceWith(iframe);
+		});
+	});
+</script>

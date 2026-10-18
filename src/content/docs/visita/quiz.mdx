@@ -1,0 +1,28 @@
+---
+title: Il quiz
+description: Quindici domande per scoprire chi è pronto per il CERN. Si può rifare quante volte si vuole.
+---
+
+import Quiz from '../../../components/Quiz.astro';
+
+:::tip[In due parole]
+Quindici domande, una risposta sola per ognuna. Le risposte sono tutte nelle pagine del sito. Alla fine c'è il punteggio. Chi fa 15 su 15 si guadagna il diritto di spiegare l'Higgs alla guida.
+:::
+
+<Quiz questions={[
+	{ q: 'Di cosa sono fatti i protoni?', a: ['Di elettroni', 'Di tre quark tenuti insieme dai gluoni', 'Di fotoni', 'Di niente: sono i mattoni più piccoli'], ok: 1, why: 'Due quark up e un quark down, incollati dai gluoni. E il 99 % della massa del protone è l’energia di quella colla.' },
+	{ q: 'Quanto è lungo l’anello dell’LHC?', a: ['2,7 km', '27 km', '270 km', '91 km'], ok: 1, why: '26,7 km, a cento metri sotto terra, tra Svizzera e Francia. I 91 km sono il progetto futuro, l’FCC.' },
+	{ q: 'A che temperatura lavorano i magneti dell’LHC?', a: ['A temperatura ambiente', 'A -100 °C', 'A -271 °C, più freddi dello spazio', 'A +1000 °C'], ok: 2, why: '1,9 gradi sopra lo zero assoluto. Servono 120 tonnellate di elio liquido. Lo spazio profondo è "più caldo": -270,4 °C.' },
+	{ q: 'Quanti giri dell’anello fa un protone in un secondo?', a: ['1', '100', '11 245', '1 milione'], ok: 2, why: 'Va al 99,9999991 % della velocità della luce: 11 245 giri al secondo, cioè 300 000 km.' },
+	{ q: 'Perché il tubo dei protoni è vuoto come lo spazio?', a: ['Per risparmiare aria', 'Perché i protoni urterebbero le molecole d’aria e si perderebbero', 'Perché l’aria è infiammabile', 'Per far sentire meno rumore'], ok: 1, why: 'Qualsiasi molecola sulla strada farebbe deviare o sparire i protoni. La pressione è come nello spazio tra i pianeti.' },
+	{ q: 'Cosa fa il campo di Higgs?', a: ['Dà la massa alle particelle fondamentali', 'Tiene insieme i quark', 'Fa la luce', 'Crea la gravità'], ok: 0, why: 'Le particelle che interagiscono tanto con il campo di Higgs sono pesanti; il fotone, che non interagisce, non ha massa.' },
+	{ q: 'In che anno è stato scoperto il bosone di Higgs?', a: ['1964', '1989', '2012', '2023'], ok: 2, why: 'Il 4 luglio 2012, annunciato da ATLAS e CMS. Nel 1964 era stato ipotizzato; nel 1989 è nato il Web; nel 2023 ha aperto lo Science Gateway.' },
+	{ q: 'Cos’è la materia oscura?', a: ['Materia nera come il carbone', 'Buchi neri', 'Qualcosa che ha gravità ma non emette né blocca la luce, e che non sappiamo cosa sia', 'Antimateria'], ok: 2, why: 'La vediamo solo dagli effetti della sua gravità sulle galassie. È il 27 % dell’universo, e il Modello Standard non ha nessuna particella adatta.' },
+	{ q: 'Cosa succede quando materia e antimateria si incontrano?', a: ['Si respingono', 'Si annichilano e diventano energia', 'Diventano materia oscura', 'Non succede niente'], ok: 1, why: 'Tutta la loro massa diventa luce. La PET negli ospedali funziona proprio così.' },
+	{ q: 'Cosa ha inventato il CERN nel 1989?', a: ['Internet', 'Il World Wide Web', 'Il telefono cellulare', 'Il computer'], ok: 1, why: 'Tim Berners-Lee ha inventato il Web (pagine, link, indirizzi www). Internet, la rete di cavi, esisteva già.' },
+	{ q: 'Quanto costa entrare allo Science Gateway?', a: ['22 franchi', '10 euro', 'È gratis', 'Dipende dall’età'], ok: 2, why: 'Tutto gratis: mostre, visite guidate, laboratori e spettacoli. I 22 franchi sono la sauna ai Bains des Pâquis.' },
+	{ q: 'Da che età si può fare la visita guidata?', a: ['5 anni', '8 anni', '12 anni', '18 anni'], ok: 2, why: 'Dai 12 anni. Le mostre sono consigliate dagli 8, i laboratori dai 5 a seconda del tema.' },
+	{ q: 'Quante particelle fondamentali ha il Modello Standard?', a: ['3', '17', '118', 'Infinite'], ok: 1, why: '6 quark, 6 leptoni, 4 portatori di forza e il bosone di Higgs. 118 sono gli elementi della tavola periodica, fatti tutti con 3 di queste 17.' },
+	{ q: 'Qual è la forza più debole di tutte?', a: ['La gravità', 'La forza debole', 'L’elettromagnetismo', 'La forza forte'], ok: 0, why: 'La gravità, di gran lunga: una calamita da frigo vince contro tutta la Terra. La sentiamo perché agisce su grandi masse e attira sempre.' },
+	{ q: 'Cosa ricrea l’LHC quando fa scontrare nuclei di piombo?', a: ['Il Big Bang', 'Un buco nero', 'Il plasma di quark e gluoni, la materia di un milionesimo di secondo dopo il Big Bang', 'Una stella'], ok: 2, why: 'A 5 000 miliardi di gradi i quark tornano liberi per un istante. Non è il Big Bang: è solo la sua temperatura, in un puntino.' },
+]} />

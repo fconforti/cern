@@ -1,0 +1,66 @@
+---
+title: 50 anni al CERN
+description: Un weekend in famiglia a Ginevra tra particelle, sauna sul lago e un tuffo nel Lemano. Questa è la guida per arrivare preparati.
+template: splash
+hero:
+  title: 50 anni al CERN
+  tagline: Dal 30 gennaio al 1° febbraio 2027 andiamo tutti e otto a Ginevra, cento metri sopra l'anello più grande del mondo. Questo sito serve a capire, prima di partire, cosa andremo a vedere, perché lo costruiscono e cosa ci cercano dentro.
+  image:
+    file: ../../assets/hero.svg
+    alt: Tracce di particelle che escono da una collisione
+  actions:
+    - text: Il programma del weekend
+      link: ./viaggio/programma/
+      icon: right-arrow
+    - text: Comincia dalle basi
+      link: ./basi/quanto-e-piccolo/
+      variant: minimal
+      icon: open-book
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import Countdown from '../../components/Countdown.astro';
+import YouTube from '../../components/YouTube.astro';
+import Go from '../../components/Go.astro';
+
+<Countdown to="2027-01-31T09:00:00+01:00" />
+
+> «Dal più piccolo granello di sabbia alle stelle più lontane, tutto ciò che ci circonda è fatto di particelle fondamentali.»
+
+## Come usare questo sito
+
+Ogni pagina comincia con un riquadro **In due parole**, che basta per i più piccoli. Poi si va più a fondo, e alla fine c'è spesso un riquadro **Per chi vuole andare a fondo** pensato per i più grandi. I video sono in italiano quando possibile; quelli in inglese partono con i sottotitoli in italiano. Accanto a ogni video c'è l'età consigliata.
+
+Non serve leggere tutto. Il percorso consigliato, in ordine:
+
+<CardGrid>
+	<Card title="1. Le basi" icon="open-book">
+		Di cosa è fatto tutto: atomi, quark, elettroni e le quattro forze che li tengono insieme. Mezz'ora di lettura, cinque video.
+	</Card>
+	<Card title="2. Il CERN e la macchina" icon="setting">
+		Come si fanno correre i protoni a un soffio dalla velocità della luce, come si fanno scontrare e come si fotografa lo scontro.
+	</Card>
+	<Card title="3. Cosa stanno cercando" icon="magnifier">
+		Il bosone di Higgs, la materia oscura, l'antimateria scomparsa e il primo istante dell'universo.
+	</Card>
+	<Card title="4. La visita" icon="rocket">
+		Lo Science Gateway, la caccia al tesoro, le domande da fare alle guide e il quiz finale.
+	</Card>
+</CardGrid>
+
+## Per cominciare: il CERN in otto minuti
+
+Se guardate un solo video prima di partire, guardate questo. È in italiano, dura poco e risponde alla domanda che si fanno tutti: ma a cosa serve?
+
+<YouTube id="GPYSRkXr5o4" title="Il CERN di Ginevra ci serve davvero? Vediamo cosa fanno nel laboratorio di fisica delle particelle" channel="Geopop" min="7:51" age="8+" />
+
+## Chi viene
+
+Filippo, Erika, Diego, Leonardo, Simone, Barbara, Chiara e Sofia. Otto in tutto: al CERN entriamo come famiglia, senza prenotazione di gruppo.
+
+<CardGrid>
+	<Go to="viaggio/programma/" title="Il programma" description="Treni, orari, hotel, fonduta, sauna e pizza di compleanno." />
+	<Go to="visita/science-gateway/" title="Lo Science Gateway" description="Cosa c'è dentro, come si prenotano visite e laboratori, cosa portare." />
+	<Go to="videoteca/" title="Videoteca" description="Tutti i video del sito in un'unica pagina, ordinati per argomento ed età." />
+	<Go to="visita/quiz/" title="Il quiz" description="Quindici domande per scoprire chi è pronto per il CERN." />
+</CardGrid>

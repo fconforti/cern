@@ -1,0 +1,49 @@
+---
+interface Q { q: string; a: string[]; ok: number; why: string }
+interface Props { questions: Q[] }
+const { questions } = Astro.props;
+---
+<div class="quiz">
+	{questions.map((item, i) => (
+		<div class="quiz-q" data-ok={item.ok}>
+			<h3>{i + 1}. {item.q}</h3>
+			{item.a.map((opt, j) => <button type="button" data-i={j}>{opt}</button>)}
+			<p class="why">{item.why}</p>
+		</div>
+	))}
+	<p class="quiz-score" aria-live="polite"></p>
+</div>
+<script>
+	const quiz = document.querySelector<HTMLElement>('.quiz');
+	if (quiz) {
+		const blocks = Array.from(quiz.querySelectorAll<HTMLElement>('.quiz-q'));
+		const score = quiz.querySelector<HTMLElement>('.quiz-score')!;
+		let right = 0, answered = 0;
+		blocks.forEach((b) => {
+			const ok = Number(b.dataset.ok);
+			const buttons = Array.from(b.querySelectorAll<HTMLButtonElement>('button'));
+			buttons.forEach((btn) =>
+				btn.addEventListener('click', () => {
+					if (b.classList.contains('done')) return;
+					b.classList.add('done');
+					answered++;
+					const chosen = Number(btn.dataset.i);
+					if (chosen === ok) right++;
+					buttons.forEach((x) => {
+						x.disabled = true;
+						if (Number(x.dataset.i) === ok) x.classList.add('ok');
+						else if (x === btn) x.classList.add('ko');
+					});
+					const total = blocks.length;
+					let msg = `Risposte giuste: ${right} su ${answered}`;
+					if (answered === total) {
+						if (right === total) msg += ' · Perfetto! Sei pronto a spiegare il CERN alla guida.';
+						else if (right >= total * 0.7) msg += ' · Bravissimo, quasi un fisico.';
+						else msg += ' · Dai un’altra occhiata alle pagine e riprova!';
+					}
+					score.textContent = msg;
+				}),
+			);
+		});
+	}
+</script>
