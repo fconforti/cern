@@ -1,29 +1,42 @@
 ---
 /**
- * Il marchio: "50", dove lo zero è l'anello dell'acceleratore con una
- * collisione al centro e un protone in corsa sull'anello.
+ * Il marchio: "50". Lo zero è l'anello dell'LHC: anello esterno sfumato,
+ * anello interno tratteggiato (il secondo fascio, a pacchetti), un protone
+ * con la scia e una collisione al centro.
  */
 interface Props { class?: string; glowId?: string }
-const { class: className, glowId = 'logo-glow' } = Astro.props;
+const { class: className, glowId = 'logo' } = Astro.props;
+const g = (n: string) => `${glowId}-${n}`;
 ---
-<svg class={className} viewBox="0 0 112 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<svg class={className} viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 	<defs>
-		<filter id={glowId} x="-30%" y="-30%" width="160%" height="160%">
-			<feGaussianBlur stdDeviation="2.2" result="b" />
+		<filter id={g('glow')} x="-30%" y="-30%" width="160%" height="160%">
+			<feGaussianBlur stdDeviation="2" result="b" />
 			<feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
 		</filter>
+		<linearGradient id={g('ring')} x1="50" y1="10" x2="90" y2="56" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#7fd1ff" />
+			<stop offset=".55" stop-color="#9fb4ff" />
+			<stop offset="1" stop-color="#c39bff" />
+		</linearGradient>
+		<linearGradient id={g('tail')} x1="56" y1="10" x2="82" y2="17" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffffff" stop-opacity="0" />
+			<stop offset="1" stop-color="#ffffff" stop-opacity="1" />
+		</linearGradient>
 	</defs>
-	<g filter={`url(#${glowId})`} fill="none" stroke-linecap="round" stroke-linejoin="round">
-		<path d="M38 10H15l-2.5 19c3.5-2.5 8.5-3.5 12.5-3 8 1 13 7 13 15 0 9-7 15-15 15-6 0-11-3-13.5-8" stroke="#ff7eb6" stroke-width="7" />
-		<ellipse cx="80" cy="33" rx="20" ry="23" stroke="#7fd1ff" stroke-width="7" />
-		<g stroke-width="2.4">
-			<path d="M80 33q5-5 11-7" stroke="#ffb347" />
-			<path d="M80 33q-5 6-10 8" stroke="#7ee2a8" />
-			<path d="M80 33q2 7 1 12" stroke="#c39bff" />
-			<path d="M80 33q-3-6-8-9" stroke="#ffffff" />
-			<path d="M80 33q7 2 12 6" stroke="#ff7eb6" />
+	<g filter={`url(#${g('glow')})`} fill="none" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M36 10H14l-2.5 19c3.5-2.5 8.5-3.5 12.5-3 8 1 13 7 13 15 0 9-7 15-15 15-6 0-11-3-13.5-8" stroke="#ff7eb6" stroke-width="7" />
+		<ellipse cx="68" cy="33" rx="20" ry="23" stroke={`url(#${g('ring')})`} stroke-width="5.5" />
+		<ellipse cx="68" cy="33" rx="13.5" ry="16.5" stroke="#7fd1ff" stroke-width="1.4" stroke-dasharray="1.5 3.2" opacity=".75" />
+		<path d="M57.4 13.5A20 23 0 0 1 82.1 16.7" stroke={`url(#${g('tail')})`} stroke-width="3" />
+		<circle cx="82.1" cy="16.7" r="3.2" fill="#ffffff" stroke="none" />
+		<g stroke-width="2">
+			<path d="M68 33q4-4 9-5.5" stroke="#ffb347" />
+			<path d="M68 33q-4 5-8.5 6.5" stroke="#7ee2a8" />
+			<path d="M68 33q1.5 5.5 .5 9.5" stroke="#c39bff" />
+			<path d="M68 33q-2.5-5-6.5-7" stroke="#ffffff" />
+			<path d="M68 33q6 1.5 9.5 5" stroke="#ff7eb6" />
 		</g>
-		<circle cx="80" cy="33" r="2.6" fill="#ffffff" stroke="none" />
-		<circle cx="94.1" cy="16.7" r="3.4" fill="#ffffff" stroke="none" />
+		<circle cx="68" cy="33" r="2.3" fill="#ffffff" stroke="none" />
 	</g>
 </svg>
