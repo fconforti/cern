@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Anteprima dei link condivisi, nello stile della hero della home.
+       {{HERO}} e {{MARK}} vengono sostituiti da pdf/build.py. -->
+  <defs>
+    <radialGradient id="gPink"><stop offset="0" stop-color="#ff7eb6" stop-opacity=".30"/><stop offset="1" stop-color="#ff7eb6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gCyan"><stop offset="0" stop-color="#7fd1ff" stop-opacity=".26"/><stop offset="1" stop-color="#7fd1ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gGreen"><stop offset="0" stop-color="#7ee2a8" stop-opacity=".14"/><stop offset="1" stop-color="#7ee2a8" stop-opacity="0"/></radialGradient>
+
+    <!-- Titolo neon: gli stessi text-shadow della hero (bianco, azzurro, rosa) -->
+    <filter id="neon" x="-25%" y="-60%" width="150%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="a1"/>
+      <feFlood flood-color="#ffffff" flood-opacity=".7"/><feComposite in2="a1" operator="in" result="s1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="a2"/>
+      <feFlood flood-color="#7fd1ff" flood-opacity=".9"/><feComposite in2="a2" operator="in" result="s2"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="a3"/>
+      <feFlood flood-color="#7fd1ff" flood-opacity=".7"/><feComposite in2="a3" operator="in" result="s3"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="26" result="a4"/>
+      <feFlood flood-color="#ff7eb6" flood-opacity=".55"/><feComposite in2="a4" operator="in" result="s4"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="45" result="a5"/>
+      <feFlood flood-color="#ff7eb6" flood-opacity=".35"/><feComposite in2="a5" operator="in" result="s5"/>
+      <feMerge><feMergeNode in="s5"/><feMergeNode in="s4"/><feMergeNode in="s3"/><feMergeNode in="s2"/><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Alone dell'illustrazione: drop-shadow azzurro e rosa -->
+    <filter id="halo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="a1"/>
+      <feFlood flood-color="#7fd1ff" flood-opacity=".75"/><feComposite in2="a1" operator="in" result="s1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="28" result="a2"/>
+      <feFlood flood-color="#ff7eb6" flood-opacity=".5"/><feComposite in2="a2" operator="in" result="s2"/>
+      <feMerge><feMergeNode in="s2"/><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Bagliore del pulsante primario -->
+    <filter id="btn" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="a1"/>
+      <feFlood flood-color="#7fd1ff" flood-opacity=".7"/><feComposite in2="a1" operator="in" result="s1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="30" result="a2"/>
+      <feFlood flood-color="#7fd1ff" flood-opacity=".35"/><feComposite in2="a2" operator="in" result="s2"/>
+      <feMerge><feMergeNode in="s2"/><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sfondo: blu della pagina con i tre bagliori della hero -->
+  <rect width="1200" height="630" fill="#0b1b3a"/>
+  <circle cx="900" cy="250" r="430" fill="url(#gPink)"/>
+  <circle cx="300" cy="360" r="460" fill="url(#gCyan)"/>
+  <circle cx="720" cy="560" r="300" fill="url(#gGreen)"/>
+
+  <!-- Logo, come nella barra in alto -->
+  <g transform="translate(70 40)">
+    <text x="0" y="40" font-family="FrauncesOG" font-weight="800" font-size="40" letter-spacing="-1.4" fill="#ffffff">CERN</text>
+    <svg x="112" y="4" width="66" height="43" viewBox="0 0 98 64">{{MARK}}</svg>
+  </g>
+
+  <!-- Titolo neon -->
+  <g filter="url(#neon)" font-family="FrauncesOG" font-weight="800" font-size="118" fill="#f4fbff">
+    <text x="66" y="262">50 anni</text>
+    <text x="66" y="380">al CERN</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="70" y="442" font-family="Inter" font-weight="600" font-size="30" fill="#e8edf5">Ginevra · 30 gennaio – 1 febbraio 2027</text>
+  <text x="70" y="484" font-family="Inter" font-weight="400" font-size="25" fill="#c3cbd8">Un weekend in famiglia tra particelle e lago</text>
+
+  <!-- Pulsante primario della hero -->
+  <g filter="url(#btn)">
+    <rect x="70" y="520" width="344" height="66" rx="33" fill="#7fd1ff"/>
+  </g>
+  <text x="104" y="562" font-family="Inter" font-weight="700" font-size="26" fill="#04122b">Preparati al viaggio</text>
+  <path d="M368 553h22M381 543l10 10-10 10" fill="none" stroke="#04122b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Illustrazione della hero, con alone -->
+  <g filter="url(#halo)">
+    <svg x="690" y="105" width="440" height="440" viewBox="0 0 400 400">{{HERO}}</svg>
+  </g>
+</svg>

@@ -38,10 +38,10 @@ import YouTube from '../../../components/YouTube.astro';
 
 ## PDF e immagine di anteprima
 
-Il PDF del piano (`public/50-anni-al-CERN.pdf`) e l'immagine per i link condivisi (`public/og.png`, 1200×630) si generano con [Typst](https://typst.app) dai sorgenti in `pdf/`:
+Il PDF del piano (`public/50-anni-al-CERN.pdf`) e l'immagine per i link condivisi (`public/og.jpg`, 1200×630) si generano dai sorgenti in `pdf/`: il PDF con [Typst](https://typst.app) da `plan.typ`, l'immagine da `og.svg`.
 
 ```sh
-uv run --with typst --with segno python pdf/build.py
+uv run --with typst --with segno --with pillow --with resvg-py --with fonttools python pdf/build.py
 ```
 
 Lo script scarica i font (Fraunces e Inter) in `pdf/.fonts/` e crea il QR code del sito. Dopo una modifica al programma, aggiornare `pdf/plan.typ` e rigenerare.
