@@ -192,3 +192,25 @@ header.header {
   backdrop-filter: blur(14px) saturate(150%);
   border-bottom-color: rgba(127, 209, 255, .14);
 }
+
+/* === Barra "In questa pagina" (mobile), sidebar e menu: stesso blu della barra in alto === */
+:root {
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-black);
+}
+mobile-starlight-toc nav {
+  background-color: var(--sl-color-black);
+  border-top-color: transparent;
+  transition: background-color .25s ease, backdrop-filter .25s ease;
+}
+mobile-starlight-toc summary { transition: border-color .25s ease; }
+:root[data-scrolled] mobile-starlight-toc nav {
+  background-color: rgba(11, 27, 58, .62);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+}
+:root[data-scrolled] mobile-starlight-toc summary { border-bottom-color: rgba(127, 209, 255, .14); }
+@media (max-width: 49.99rem) {
+  /* barra in alto e barra dell'indice sembrano un blocco unico: una sola linea, sotto */
+  :root[data-scrolled]:has(mobile-starlight-toc) header.header { border-bottom-color: transparent; }
+}
