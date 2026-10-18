@@ -1,8 +1,8 @@
 ---
 interface Props { to: string; label?: string }
-const { to, label = 'alla giornata al CERN' } = Astro.props;
+const { to, label = 'Mancano ancora:' } = Astro.props;
 ---
-<p class="countdown-label">Mancano <strong>{label}</strong>:</p>
+<p class="countdown-label">{label}</p>
 <div class="countdown not-content" data-to={to} aria-live="polite">
 	<div><b data-u="d">–</b><span>giorni</span></div>
 	<div><b data-u="h">–</b><span>ore</span></div>
