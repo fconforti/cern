@@ -37,6 +37,7 @@ export default defineConfig({
 			components: {
 				ThemeProvider: './src/components/ThemeProvider.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
+				SiteTitle: './src/components/SiteTitle.astro',
 			},
 			lastUpdated: false,
 			credits: false,
