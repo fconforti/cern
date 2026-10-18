@@ -35,3 +35,13 @@ import YouTube from '../../../components/YouTube.astro';
 ```
 
 `lang="en"` attiva i sottotitoli in italiano. Gli ID vanno verificati: `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=ID&format=json` risponde con titolo e canale se il video esiste ed è incorporabile.
+
+## PDF e immagine di anteprima
+
+Il PDF del piano (`public/50-anni-al-CERN.pdf`) e l'immagine per i link condivisi (`public/og.png`, 1200×630) si generano con [Typst](https://typst.app) dai sorgenti in `pdf/`:
+
+```sh
+uv run --with typst --with segno python pdf/build.py
+```
+
+Lo script scarica i font (Fraunces e Inter) in `pdf/.fonts/` e crea il QR code del sito. Dopo una modifica al programma, aggiornare `pdf/plan.typ` e rigenerare.

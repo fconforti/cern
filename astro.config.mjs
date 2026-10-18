@@ -6,6 +6,8 @@ import starlight from '@astrojs/starlight';
 // Il workflow di deploy imposta SITE e BASE_PATH in automatico.
 const site = process.env.SITE ?? 'https://fconforti.github.io';
 const base = (process.env.BASE_PATH ?? '/').replace(/\/?$/, '/');
+// Anteprima dei link condivisi (WhatsApp & co.): generata da pdf/og.typ.
+const ogImage = new URL(base + 'og.png', site).href;
 
 /** Prefissa `base` ai link interni assoluti scritti nel Markdown. */
 function rehypeBaseLinks() {
@@ -46,6 +48,12 @@ export default defineConfig({
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
 			head: [
 				{ tag: 'meta', attrs: { name: 'theme-color', content: '#0b1b3a' } },
+				{ tag: 'meta', attrs: { property: 'og:image', content: ogImage } },
+				{ tag: 'meta', attrs: { property: 'og:image:type', content: 'image/png' } },
+				{ tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+				{ tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+				{ tag: 'meta', attrs: { property: 'og:image:alt', content: '50 anni al CERN, Ginevra, 30 gennaio - 1 febbraio 2027' } },
+				{ tag: 'meta', attrs: { name: 'twitter:image', content: ogImage } },
 				{ tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
 				{ tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' } },
 				{
