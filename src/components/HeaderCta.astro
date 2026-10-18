@@ -1,0 +1,36 @@
+---
+/** Al posto della ricerca: pulsante "Preparati al viaggio" nella barra in alto. */
+const href = import.meta.env.BASE_URL.replace(/\/$/, '') + '/basi/quanto-e-piccolo/';
+---
+<a class="header-cta" href={href}>
+	<span class="long">Preparati al viaggio</span>
+	<span class="short" aria-hidden="true">Preparati</span>
+	<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+</a>
+
+<style>
+	.header-cta {
+		margin-inline-start: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: .4rem;
+		padding: .5rem .95rem;
+		border-radius: 999px;
+		background: var(--fam-cyan);
+		color: #04122b;
+		font-weight: 700;
+		font-size: .9rem;
+		line-height: 1;
+		white-space: nowrap;
+		text-decoration: none;
+		box-shadow: 0 0 10px rgba(127, 209, 255, .6), 0 0 26px rgba(127, 209, 255, .3);
+		transition: box-shadow .2s;
+	}
+	.header-cta:hover { color: #04122b; box-shadow: 0 0 14px rgba(127, 209, 255, .9), 0 0 36px rgba(127, 209, 255, .5); }
+	.short { display: none; }
+	@media (max-width: 26rem) {
+		.long { display: none; }
+		.short { display: inline; }
+		.header-cta { padding: .5rem .8rem; }
+	}
+</style>

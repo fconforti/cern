@@ -38,8 +38,10 @@ export default defineConfig({
 				ThemeProvider: './src/components/ThemeProvider.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				SiteTitle: './src/components/SiteTitle.astro',
+				Search: './src/components/HeaderCta.astro',
 			},
 			lastUpdated: false,
+			pagefind: false,
 			credits: false,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
 			head: [
