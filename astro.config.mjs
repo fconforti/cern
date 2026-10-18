@@ -34,7 +34,10 @@ export default defineConfig({
 			defaultLocale: 'root',
 			locales: { root: { label: 'Italiano', lang: 'it' } },
 			customCss: ['./src/styles/custom.css'],
-			components: { ThemeProvider: './src/components/ThemeProvider.astro' },
+			components: {
+				ThemeProvider: './src/components/ThemeProvider.astro',
+				ThemeSelect: './src/components/ThemeSelect.astro',
+			},
 			lastUpdated: false,
 			credits: false,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
